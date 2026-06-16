@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative "boot"
 
 require "rails/all"
@@ -23,9 +25,9 @@ module Granite
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
-     config.generators do |g|
-      g.test_framework :test_unit, fixture: false
-    end
+    config.generators do |g|
+     g.test_framework :test_unit, fixture: false
+   end
     # Configure asset pipeline to use Sprockets
     config.assets.pipeline = :sprockets
   end

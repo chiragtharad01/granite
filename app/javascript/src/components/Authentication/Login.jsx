@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import authApi from "apis/auth";
 import { setAuthHeaders } from "apis/axios";
 import LoginForm from "components/Authentication/Form/Login";
+import Logger from "js-logger";
 import { setToLocalStorage } from "utils/storage";
 
 const Login = () => {
@@ -24,7 +25,7 @@ const Login = () => {
       setAuthHeaders();
       window.location.href = "/";
     } catch (error) {
-      logger.error(error);
+      Logger.error(error);
       setLoading(false);
     }
   };

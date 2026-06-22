@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import tasksApi from "apis/tasks";
 import usersApi from "apis/users";
 import { Container, PageLoader, PageTitle } from "components/commons";
+import Logger from "js-logger";
 import { useParams } from "react-router-dom";
 
 import Form from "./Form";
@@ -27,7 +28,7 @@ const Edit = ({ history }) => {
       history.push("/");
     } catch (error) {
       setLoading(false);
-      logger.error(error);
+      Logger.error(error);
     }
   };
 
@@ -38,7 +39,7 @@ const Edit = ({ history }) => {
       } = await usersApi.fetch();
       setUsers(users);
     } catch (error) {
-      logger.error(error);
+      Logger.error(error);
     }
   };
 
@@ -53,7 +54,7 @@ const Edit = ({ history }) => {
       setAssignedUser(assigned_user);
       setUserId(assigned_user.id);
     } catch (error) {
-      logger.error(error);
+      Logger.error(error);
     }
   };
 

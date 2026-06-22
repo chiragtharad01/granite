@@ -15,22 +15,34 @@ const Show = () => {
     history.push(`/tasks/${task.slug}/edit`);
   };
 
-  const fetchTaskDetails = async () => {
-    try {
-      const {
-        data: { task },
-      } = await tasksApi.show(slug);
-      setTask(task);
-      setPageLoading(false);
-    } catch (error) {
-      logger.error(error);
-      history.push("/");
-    }
-  };
+  // const fetchTaskDetails = async () => {
+  //   try {
+  //     const {
+  //       data: { task },
+  //     } = await tasksApi.show(slug);
+  //     setTask(task);
+  //     setPageLoading(false);
+  //   } catch (error) {
+  //     logger.error(error);
+  //     history.push("/");
+  //   }
+  // };
 
   useEffect(() => {
+    const fetchTaskDetails = async () => {
+      try {
+        const {
+          data: { task },
+        } = await tasksApi.show(slug);
+        setTask(task);
+        setPageLoading(false);
+      } catch (error) {
+        logger.error(error);
+        history.push("/");
+      }
+    };
     fetchTaskDetails();
-  }, []);
+  }, [slug, history]);
 
   if (pageLoading) {
     return <PageLoader />;

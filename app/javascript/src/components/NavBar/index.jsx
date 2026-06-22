@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import authApi from "apis/auth";
 import { resetAuthTokens } from "apis/axios";
 import classnames from "classnames";
+import Logger from "js-logger";
 import { Link, useLocation } from "react-router-dom";
 import { getFromLocalStorage, setToLocalStorage } from "utils/storage";
 
@@ -44,7 +45,7 @@ const NavBar = () => {
       resetAuthTokens();
       window.location.href = "/";
     } catch (error) {
-      logger.error(error);
+      Logger.error(error);
     }
   };
 

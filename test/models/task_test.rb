@@ -57,14 +57,7 @@ class TaskTest < ActiveSupport::TestCase
   end
 
   def test_task_count_increases_on_saving
-    assert_difference ["Task.count"] do
-      create(:task)
-    end
-  end
-
-  def test_task_count_increases_on_saving
     assert_difference ["Task.count"], 1 do
-      create(:task)
       create(:task)
     end
   end

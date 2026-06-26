@@ -5,7 +5,7 @@ class TaskLoggerJob
 
   def perform(task_id)
     task = Task.find(task_id)
-    puts "Created a task with following attributes : #{task.attributes}"
+    message = LoggerMessageBuilderService.new(task).process!
 
     log = Log.create!(task_id: task.id, message:)
     puts log.message

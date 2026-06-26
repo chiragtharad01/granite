@@ -3,7 +3,7 @@
 FactoryBot.define do
   factory :comment do
     user
-    task_params
+    task
     content { Faker::Lorem.paragraph }
   end
 end

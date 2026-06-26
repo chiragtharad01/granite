@@ -64,7 +64,7 @@ class TaskTest < ActiveSupport::TestCase
 
   def test_task_count_decreases_on_deleting
     assert_difference ["Task.count"], -1 do
-      delete(:task)
+      @task.destroy
     end
   end
 

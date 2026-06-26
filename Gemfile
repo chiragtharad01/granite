@@ -81,4 +81,6 @@ gem "data_migrate"
 gem "bcrypt", "~> 3.1.13"
 gem "simplecov", require: false, group: :test
 
+gem "dotenv-rails"
 gem "pundit"
+gem "sidekiq", "~> 7.0"

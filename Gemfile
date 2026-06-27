@@ -84,3 +84,11 @@ gem "simplecov", require: false, group: :test
 gem "dotenv-rails"
 gem "pundit"
 gem "sidekiq", "~> 7.0"
+
+# For periodic sidekiq jobs
+gem "sidekiq-cron"
+
+# For opening mails in development env
+gem "letter_opener", group: :development
+# Gemfile
+gem "secvault", "~> 3.1"

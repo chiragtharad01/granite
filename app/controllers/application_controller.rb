@@ -13,6 +13,8 @@ class ApplicationController < ActionController::Base
 
   def handle_api_exception(exception)
     case exception
+    when ActiveRecord::RecordNotFound
+      render_error(t("not_found", entity: exception.model), :not_found)
     when -> (e) { e.message.include?("PG::") || e.message.include?("SQLite3::") }
       handle_database_level_exception(exception)
 

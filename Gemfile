@@ -83,7 +83,7 @@ gem "simplecov", require: false, group: :test
 
 gem "dotenv-rails"
 gem "pundit"
-gem "sidekiq", "~> 7.0"
+gem "sidekiq", "~> 8.0"
 
 # For periodic sidekiq jobs
 gem "sidekiq-cron"
